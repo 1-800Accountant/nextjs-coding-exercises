@@ -4,20 +4,6 @@ import FizzBuzzStyles from '../styles/FizzBuzzStyles';
 const FizzBuzz = () => {
   const fizzBuzz = () => {
     // write function here
-    const results = [];
-    for (var i = 0; i < 101; i++) {
-
-      if (i % 15 === 0) {
-        results.push(<p>FizzBuzz</p>);
-      } else if (i % 3 === 0) {
-        results.push(<p>Fizz</p>);
-      } else if (i % 5 === 0) {
-        results.push(<p>Buzz</p>);
-      } else {
-        results.push(<p>{i}</p>);
-      }
-    }
-    return results;
   };
 
   return (
