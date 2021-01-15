@@ -4,9 +4,7 @@ const Results = ({ results }) => (
   <ResultsStyles>
     <h1>Results:</h1>
     <ul>
-      {results.map((result, index) => (
-        <li key={index}>{result}</li>
-      ))}
+      {/* Map over results prop here */}
     </ul>
   </ResultsStyles>
 );

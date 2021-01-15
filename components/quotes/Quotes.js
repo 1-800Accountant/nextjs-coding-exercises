@@ -7,7 +7,7 @@ const Quotes = ({ handleResults }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const { data } = await axios.get(`https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/${search}`);
+    const { data } = axios.get(`https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/${search}`);
     handleResults(data);
   };
 
