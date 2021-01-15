@@ -9,3 +9,9 @@
 6. Provide default text in case there are no results to display (ex. "No results found!")
 7. Set quote results to a Cookie
 8. On Results.js page, read quote results from Cookie and display
+
+# Resources
+- [Ron Swanson Quotes](https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api)
+- [Styled Components](https://styled-components.com/docs)
+- [js-cookie](https://github.com/js-cookie/js-cookie)
+- [next.js](https://nextjs.org/docs/getting-started)
