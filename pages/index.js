@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Cookies from 'js-cookie';
 import Quotes from '../components/quotes/Quotes';
 import Results from '../components/results/Results';
 import styles from '../styles/Home.module.css';
@@ -9,6 +10,7 @@ const Home = () => {
 
   const handleResults = results => {
     setResults(results);
+    Cookies.set('results', results);
   };
 
   return (

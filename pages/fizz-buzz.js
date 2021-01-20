@@ -11,6 +11,20 @@ const FizzBuzz = () => {
 
   const fizzBuzz = () => {
     // write function here
+    const results = [];
+
+    for(let index = 0; index <= 100; index++) {
+      if (index % 3 === 0 && index % 5 === 0) {
+        results.push('FizzBuzz');
+      } else if (index % 3 === 0) {
+        results.push("Fizz");
+      } else if (index % 5 === 0) {
+        results.push("Buzz");
+      } else {
+        results.push(index);
+      }
+    }
+    setResults(results);
   };
 
   return (
@@ -28,7 +42,6 @@ const FizzBuzz = () => {
           <p>Any time a number is a multiple of 3, print "Fizz"</p>
           <p>Any time a number is a multiple of 5, print "Buzz"</p>
           <p>Any time a number is a multiple of both 3 and 5, print "FizzBuzz"</p>
-          <p>You can print elements just by returning a `p` tag</p>
         </div>
         <div className="solution">
           {results.map((result, index) => (
