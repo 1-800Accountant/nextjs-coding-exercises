@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.css';
 
 const Home = () => {
   const [results, setResults] = useState([]);
+  const [searched, setSearched] = useState(false);
 
   const handleResults = results => {
     setResults(results);
@@ -23,8 +24,8 @@ const Home = () => {
         <Link href="/fizz-buzz">FizzBuzz</Link>
       </div>
       <main className={styles.main}>
-        <Quotes handleResults={handleResults} />
-        <Results results={results} />
+        <Quotes handleResults={handleResults} setSearched={setSearched} />
+        <Results results={results} searched={searched} />
       </main>
     </div>
   )

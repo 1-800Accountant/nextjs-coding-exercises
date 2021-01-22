@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import QuotesStyles from './QuotesStyles.js';
 
-const Quotes = ({ handleResults }) => {
+const Quotes = ({ handleResults, setSearched }) => {
   const [search, setSearch] = useState('');
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const { data } = axios.get(`https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/${search}`);
+    const { data } = await axios.get(`https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/${search}`);
+
+    Cookies.set('ronQuotes', data)
     handleResults(data);
+
+    setSearched(true)
   };
 
   return (
@@ -18,7 +23,7 @@ const Quotes = ({ handleResults }) => {
         <label htmlFor="search">
           <input id="search" type="text" onChange={e => setSearch(e.target.value)}/>
         </label>
-        <button type="button">Search</button>
+        <button type="submit">Search</button>
       </form>
     </QuotesStyles>
   );

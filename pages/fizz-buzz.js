@@ -10,7 +10,28 @@ const FizzBuzz = () => {
   }, []);
 
   const fizzBuzz = () => {
-    // write function here
+    const answer = [];
+
+    let number = 1;
+
+    while (number < 101){
+      if (number % 15 === 0) {
+        answer.push("FizzBuzz");
+      }
+      else if (number % 3 === 0) {
+        answer.push("Fizz");
+      }
+      else if (number % 5 === 0) {
+        answer.push("Buzz");
+      }
+      else {
+        answer.push(number);
+      }
+      number++;
+    }
+
+    setResults(answer)
+
   };
 
   return (
