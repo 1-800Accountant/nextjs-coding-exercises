@@ -11,6 +11,21 @@ const FizzBuzz = () => {
 
   const fizzBuzz = () => {
     // write function here
+    const answers = [];
+    for(var i = 0; i<100; i++) {
+      // var answer = i;
+      if( (i % 5 === 0) && (i % 3 === 0) ){
+        answers.push( "FizzBuzz" );
+      }else if( i % 5 === 0){
+        answer = "Buzz";
+      }else if( i % 3 === 0 ){
+        answer = "Fizz";
+      }
+
+      // console.log(answer);
+    }
+    setResults(answers);
+
   };
 
   return (
