@@ -4,7 +4,7 @@ const Results = ({ results }) => (
   <ResultsStyles>
     <h1>Results:</h1>
     <ul>
-      {/* Map over results prop here */}
+      {/* Map over results here */}
     </ul>
   </ResultsStyles>
 );

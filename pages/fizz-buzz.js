@@ -10,7 +10,7 @@ const FizzBuzz = () => {
   }, []);
 
   const fizzBuzz = () => {
-    // write function here
+    // fizzBuzz function here
   };
 
   return (
