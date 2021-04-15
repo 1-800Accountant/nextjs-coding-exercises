@@ -7,7 +7,7 @@ const Quotes = ({ handleResults }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const { data } = axios.get(`https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/${search}`);
+    const { data } = await axios.get(`https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/${search}`);
     handleResults(data);
   };
 
@@ -18,7 +18,7 @@ const Quotes = ({ handleResults }) => {
         <label htmlFor="search">
           <input id="search" type="text" onChange={e => setSearch(e.target.value)}/>
         </label>
-        <button type="button">Search</button>
+        <button type="submit">Search</button>
       </form>
     </QuotesStyles>
   );
