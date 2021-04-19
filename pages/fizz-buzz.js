@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FizzBuzzStyles from '../styles/FizzBuzzStyles';
 
 const FizzBuzz = () => {
-  const [results, setResults] = useState();
+  const [results, setResults] = useState([]);
   const fizzBuzz = () => {
     // write function here
   };
