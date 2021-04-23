@@ -1,12 +1,29 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FizzBuzzStyles from '../styles/FizzBuzzStyles';
 
 const FizzBuzz = () => {
   const [results, setResults] = useState([]);
+
   const fizzBuzz = () => {
-    // write function here
+    let tempAns = [];
+    for (var i = 0; i <= 100; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        tempAns.push('FizzBuzz');
+      } else if (i % 3 === 0 && i % 5 !== 0) {
+        tempAns.push('Fizz');
+      } else if (i % 3 !== 0 && i % 5 === 0) {
+        tempAns.push('Buzz');
+      } else {
+        tempAns.push(`${i}`);
+      }
+    }
+
+    setResults(tempAns);
   };
+  useEffect(() => {
+    fizzBuzz();
+  }, []);
 
   return (
     <FizzBuzzStyles>
@@ -27,7 +44,11 @@ const FizzBuzz = () => {
           </p>
           <p>You can print elements just by returning a `p` tag</p>
         </div>
-        <div className="solution">{results}</div>
+        <div className="solution">
+          {results.map((result, index) => (
+            <p key={index}>{result}</p>
+          ))}
+        </div>
       </div>
     </FizzBuzzStyles>
   );
