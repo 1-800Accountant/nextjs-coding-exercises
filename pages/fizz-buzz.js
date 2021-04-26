@@ -5,8 +5,27 @@ import FizzBuzzStyles from '../styles/FizzBuzzStyles';
 const FizzBuzz = () => {
   const [results, setResults] = useState([]);
 
+  useEffect(() => {
+    setResults(fizzBuzz());
+  }, []);
+
   const fizzBuzz = () => {
     // write function here
+    let newArr = [];
+    let x = 1;
+    while (x <= 100) {
+      if (x % 3 === 0) {
+        newArr.push('Fizz');
+      } else if (x % 5 === 0) {
+        newArr.push('Buzz');
+      } else if (x % 3 === 0 && x % 5 === 0) {
+        newArr.push('FizzBuzz');
+      } else {
+        newArr.push(x);
+      }
+      x++;
+    }
+    return newArr;
   };
 
   return (
@@ -26,6 +45,8 @@ const FizzBuzz = () => {
           <p>
             Any time a number is a multiple of both 3 and 5, print "FizzBuzz"
           </p>
+          <p>First Render the results in console</p>
+
           <p>You can print elements just by returning a `p` tag</p>
         </div>
         <div className="solution">
