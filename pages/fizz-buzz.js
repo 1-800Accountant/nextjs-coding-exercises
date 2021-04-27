@@ -5,26 +5,8 @@ import FizzBuzzStyles from '../styles/FizzBuzzStyles';
 const FizzBuzz = () => {
   const [results, setResults] = useState([]);
 
-  useEffect(() => {
-    fizzBuzz();
-  }, []);
-
   const fizzBuzz = () => {
     // write function here
-    const results = [];
-    for (var i = 0; i < 101; i++) {
-
-      if (i % 15 === 0) {
-        results.push('FizzBuzz');
-      } else if (i % 3 === 0) {
-        results.push('Fizz');
-      } else if (i % 5 === 0) {
-        results.push('Buzz');
-      } else {
-        results.push(<p>{i}</p>);
-      }
-    }
-    setResults(results);
   };
 
   return (
@@ -41,7 +23,9 @@ const FizzBuzz = () => {
           <p>Write a function that prints the numbers from 1 to 100</p>
           <p>Any time a number is a multiple of 3, print "Fizz"</p>
           <p>Any time a number is a multiple of 5, print "Buzz"</p>
-          <p>Any time a number is a multiple of both 3 and 5, print "FizzBuzz"</p>
+          <p>
+            Any time a number is a multiple of both 3 and 5, print "FizzBuzz"
+          </p>
           <p>You can print elements just by returning a `p` tag</p>
         </div>
         <div className="solution">
@@ -52,6 +36,6 @@ const FizzBuzz = () => {
       </div>
     </FizzBuzzStyles>
   );
-}
+};
 
 export default FizzBuzz;
