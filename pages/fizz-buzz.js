@@ -5,8 +5,36 @@ import FizzBuzzStyles from '../styles/FizzBuzzStyles';
 const FizzBuzz = () => {
   const [results, setResults] = useState([]);
 
+  useEffect(() => {
+    setResults(fizzBuzz());
+  }, []);
+
   const fizzBuzz = () => {
     // write function here
+
+    const ans = [];
+    for (let i = 0; i <= 100; i++) {
+      if (i % 3 === 0) {
+        if (i % 5 === 0) {
+          // console.log('FizzBuzz');
+          ans.push('FizzBuzz');
+          continue;
+        }
+        // console.log('Fizz');
+        ans.push('Fizz');
+        continue;
+      }
+
+      if (i % 5 === 0) {
+        // console.log('Buzz');
+        ans.push('Buzz');
+        continue;
+      }
+
+      // console.log(i);
+      ans.push(i);
+    }
+    return ans;
   };
 
   return (
